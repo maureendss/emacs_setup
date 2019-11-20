@@ -26,8 +26,7 @@
 (require 'ido)
 (ido-mode t)
 
-;; (add-to-list 'package-archives
-;;   '("melpa" . "http://melpa.milkbox.net/packages/") t)
+;; add useful package lists
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.org/packages/"))
 (add-to-list 'package-archives
@@ -36,6 +35,7 @@
   '("melpa-stable" . "http://stable.melpa.org/packages/") t)
 (package-initialize)
 
+;; set up theme
 (load-theme 'misterioso t)
 
 
@@ -55,7 +55,7 @@
 (setq auto-save-file-name-transforms '((".*" "~/.emacs.d/auto-save-list/" t)))
 
 
-;; NEOTREE
+;; Use neotree (in melpa list packages)
 (require 'neotree)
 (global-set-key [f8] 'neotree-toggle)
 (setq neo-smart-open t)
@@ -249,9 +249,7 @@
 
 
 
-; added alone
-
-
+; key binfing to change window
 (when (fboundp 'windmove-default-keybindings)
   (windmove-default-keybindings))
 (global-set-key "\M-[1;2A" 'windmove-up)
@@ -320,10 +318,7 @@
 
 ;;; =======
 ;;; Startup
-
-
 (setq inhibit-startup-screen t)
-
 (shell)
 (delete-other-windows)
 (split-window-right)
