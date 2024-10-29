@@ -35,6 +35,15 @@
   '("melpa-stable" . "http://stable.melpa.org/packages/") t)
 (package-initialize)
 
+;; install vterm
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+
+(use-package vterm
+  :ensure t)
+
+
 ;; set up theme
 (load-theme 'misterioso t)
 
